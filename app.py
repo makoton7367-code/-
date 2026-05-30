@@ -5,34 +5,35 @@ from openpyxl.styles import Font, Border, Side, PatternFill
 from io import BytesIO
 import re
 
-# ▽ここから貼り付け（年配の方向け：文字と枠線をクッキリ濃くする設定）
+▽▽▽ ここを新しく差し替えます（最後を html に修正しました） ▽▽▽
 st.markdown(
     """
     <style>
-    /* ① アップロードエリアの点線枠を真っ黒で太くする */
+    /* ① アップロードエリアの点線枠を真っ黒にして目立たせる */
     [data-testid="stFileUploaderDropzone"] {
         border: 2px dashed #000000 !important;
         background-color: #f8f9fa !important;
     }
-    /* ② 点線枠の中の文字（Drag and drop...など）を真っ黒＆太字にする */
+    /* ② 点線枠の中の文字や案内（Drag and drop...など）を真っ黒＆太字にする */
     [data-testid="stFileUploaderDropzone"] {
         color: #000000 !important;
         font-weight: bold !important;
     }
-    /* ③ 画面上のすべての通常の文字や説明文を真っ黒にして読みやすくする */
+    /* ③ 画面上のすべての通常の文字をハッキリとした黒にする */
     .stMarkdown, p, label {
         color: #000000 !important;
     }
-    /* ④ アップロード枠の上の「Excelファイルをアップロード」の文字をさらに大きく太く */
+    /* ④ タイトルをさらに大きく太く目立たせる */
     div[data-testid="stFileUploader"] label p {
-        font-size: 1.2rem !important;
+        font-size: 1.3rem !important;
         font-weight: bold !important;
         color: #000000 !important;
     }
     </style>
     """,
-    unsafe_allow_index=True
+    unsafe_allow_html=True  # 💡ここを「html」に直しました！
 )
+# △△△ ここまで △△△
 
 st.title("発注明細リスト 自動加工ツール")
 
